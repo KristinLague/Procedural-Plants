@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1893945590613162}
+  m_IsPrefabAsset: 1
+--- !u!1 &1893945590613162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4006078216921080}
+  - component: {fileID: 114625387134462136}
+  m_Layer: 0
+  m_Name: L-System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4006078216921080
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893945590613162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114625387134462136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893945590613162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6418abcbdb629b344b6853715fa83ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  growSpeed: 35
+  leafGrowSpeed: 2
+  personalizedRules:
+  - name: ONE
+    rules:
+    - Name: 88
+      addition: '[F-[X+X]+F[+FX]-X]'
+    - Name: 70
+      addition: FF
+  - name: TWO
+    rules:
+    - Name: 88
+      addition: '[-FX][+FX][FX]'
+    - Name: 70
+      addition: FF
+  - name: THREE
+    rules:
+    - Name: 88
+      addition: '[-FX]X[+FX][+F-FX]'
+    - Name: 70
+      addition: FF
+  - name: FOUR
+    rules:
+    - Name: 88
+      addition: '[FF[+XF-F+FX]--F+F-FX]'
+    - Name: 70
+      addition: FF
+  - name: FIVE
+    rules:
+    - Name: 88
+      addition: '[FX[+F[-FX]FX][-F-FXFX]]'
+    - Name: 70
+      addition: FF
+  - name: SIX
+    rules:
+    - Name: 88
+      addition: '[F[+FX][*+FX][/+FX]]'
+    - Name: 70
+      addition: FF
+  - name: SEVEN
+    rules:
+    - Name: 88
+      addition: '[*+FX]X[+FX][/+F-FX]'
+    - Name: 70
+      addition: FF
+  - name: EIGHT
+    rules:
+    - Name: 88
+      addition: '[F[-X+F[+FX]][*-X+F[+FX]][/-X+F[+FX]-X]]'
+    - Name: 70
+      addition: FF
+  - name: NINE
+    rules:
+    - Name: 70
+      addition: FF-[XY]+[XY]
+    - Name: 88
+      addition: +FY
+    - Name: 89
+      addition: -FX
+  iterations: 5
+  angle: 30
+  width: 1
+  minLeafLength: 1.5
+  maxLeafLength: 5
+  minlength: 0.5
+  maxLength: 1.5
+  variance: 10
+  hasTreeChanged: 0
+  tree: {fileID: 0}
+  currentlyAppliedRules:
+    name: 
+    rules: []
+  treeParent: {fileID: 1275676664867230, guid: f4347d4bbe2ecc44faf7bef4c38e288d, type: 2}
+  branch: {fileID: 1423559633119012, guid: 0115ba0c02f0496478fb80e8515b9c25, type: 2}
+  leaf: {fileID: 1297165066998070, guid: 462e227495dc4ef49abea8c40d6b6d24, type: 2}
