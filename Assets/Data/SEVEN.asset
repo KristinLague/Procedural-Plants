@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ef9f7f39baf6c4c8ae66bb5e6a781f, type: 3}
   m_Name: SEVEN
   m_EditorClassIdentifier: 
-  RuleName: 
-  AppliedRules: []
+  RuleName: SEVEN
+  AppliedRules:
+  - Name: 88
+    addition: '[*+FX]X[+FX][/+F-FX]'
+  - Name: 70
+    addition: FF
