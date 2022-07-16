@@ -67,13 +67,10 @@ public class PlantGeneratorEditor : EditorWindow
         VisualElement editorUI     = visualTree.Instantiate();
         root.Add(editorUI);
         
-		treeParent = GameObject.Find("treeParent");
 		branch = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Branch.Prefab");
 		leaf = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Leaf.Prefab");
 
-		transformKeeper = new GameObject();
-        
-        Slider angleSD              = root.Q<Slider>("angleSD");
+		Slider angleSD              = root.Q<Slider>("angleSD");
         Slider widthSD              = root.Q<Slider>("widthSD");
         Slider varianceSD           = root.Q<Slider>("varianceSD");
         SliderInt iterationSD       = root.Q<SliderInt>("iterationsSD");
@@ -169,8 +166,15 @@ public class PlantGeneratorEditor : EditorWindow
         boundsMinMaxX = new Vector2(float.MaxValue, float.MinValue);
         boundsMinMaxY = new Vector2(float.MaxValue, float.MinValue);
 
-        Destroy(tree);
-        tree = Instantiate(treeParent);
+        if(tree != null)
+			DestroyImmediate(tree);
+
+        tree = new GameObject();
+        
+        if(transformKeeper != null)
+	        DestroyImmediate(transformKeeper);
+
+        transformKeeper = new GameObject();
 
         //------------PART ONE - GROWING OF THE STRING/PATH--------------------------------
         //We are starting out to setting our currentString that is going to be our
