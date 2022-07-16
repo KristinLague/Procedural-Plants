@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
-[System.Serializable]
-public struct Rules  
+[CreateAssetMenu(fileName = "Data", menuName = "L-System/RulesObject", order = 1)]
+public class Rules : ScriptableObject
 {
-    public string name;
-    public List<Rule> rules;
+    public string RuleName;
+    public List<Rule> AppliedRules;
 }

@@ -5,10 +5,11 @@ using System.Text;
 
 public class LSystem : MonoBehaviour 
 {
-    public float growSpeed=20;
+	[Header("Visualization Settings")]
+    public float growSpeed = 20;
     public float leafGrowSpeed = 2;
 
-    //Changeable variables to modify outcome
+    [Header("Plant Settings")]
     public List<Rules> personalizedRules = new List<Rules>();
     public int iterations;
     public float angle;
@@ -54,7 +55,7 @@ public class LSystem : MonoBehaviour
     private string currentString = "";
     private float[] randomRotations;
 
-	private void Awake()
+	/*private void Awake()
 	{
         instance = this;
 
@@ -330,4 +331,5 @@ public class LSystem : MonoBehaviour
 	void OnDrawGizmos() {
         Gizmos.DrawWireCube(new Vector3(boundsMinMaxX.x + boundsMinMaxX.y, boundsMinMaxY.x + boundsMinMaxY.y) * .5f, new Vector3(boundsMinMaxX.y - boundsMinMaxX.x, boundsMinMaxY.y - boundsMinMaxY.x));
     }
+	*/
 }
